@@ -154,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578030636725</updated>
       <workItem from="1578030638506" duration="3000" />
-      <workItem from="1578030668771" duration="31212000" />
+      <workItem from="1578030668771" duration="33126000" />
     </task>
     <servers />
   </component>
@@ -166,11 +166,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="525" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1578037816386" />
-    <state x="461" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578074179377">
+    <state x="461" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578078938500">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="403" y="156" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1344.800@0.0.1344.800" timestamp="1578054183593" />
-    <state x="461" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1578074179377" />
+    <state x="461" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1578078938500" />
     <state x="369" y="226" key="com.intellij.ide.util.TipDialog" timestamp="1578030677296">
       <screen x="0" y="0" width="1344" height="800" />
     </state>

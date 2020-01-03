@@ -66,6 +66,50 @@
                         </tbody>
                     </table>
                 </div>
+
+                <p></p>
+                <div class="card">
+                    <div class="card-header">{{ __('Adicionar um novo utilizador') }}</div>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Palavra Passe</th>
+                            <th>Aluno</th>
+                            <th>Docente</th>
+                            <th>Administrador</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <form id="insert_new_user_form" method="POST" action="{{ route('api_add_user') }}">
+                                    {{csrf_field()}}
+                                    <input type="text" name="name" placeholder="Nome">
+                                </form>
+                            </td>
+                            <td>
+                                <input form="insert_new_user_form" type="email" name="email" placeholder="Email">
+                            </td>
+                            <td>
+                                <input form="insert_new_user_form" type="password" name="password" placeholder="password">
+                            </td>
+                            <td>
+                                <input form="insert_new_user_form" type="checkbox" name="permissions[]" value="aluno">
+                            </td>
+                            <td>
+                                <input form="insert_new_user_form" type="checkbox" name="permissions[]" value="docente">
+                            </td>
+                            <td>
+                                <input form="insert_new_user_form" type="checkbox" name="permissions[]" value="admin">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <input form="insert_new_user_form" type="submit" value="Criar novo utilizador">
+                </div>
+
             </div>
         </div>
     </div>

@@ -34,3 +34,5 @@ Route::post('api/edit_user', ['as'=> 'api_edit_user', 'uses' => 'EditarUtilizado
 Route::post('api/delete_curso',['as'=> 'api_delete_curso', 'uses' => 'AlunosCursos@deleteCurso']);
 
 Route::post('api/add_curso',['as'=> 'api_add_curso', 'uses' => 'AlunosCursos@addCurso']);
+
+Route::post('api/add_user', ['as'=> 'api_add_user', 'uses' => 'GerirUtilizadores@addUser']);
