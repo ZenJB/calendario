@@ -21,11 +21,9 @@ class GerirUtilizadores extends Controller
     function addUser(){
         $name = Input::get('name');
         $email = Input::get('email');
-        $password = Input::get('passowrd');
+        $password = Input::get('password');
         $user_permissions = Input::get('permissions');
-
         $user_id = User::create([
-
             'name' => $name,
             'email' => $email,
             'password' => Hash::make($password),

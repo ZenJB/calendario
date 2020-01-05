@@ -68,6 +68,7 @@
                                 <input type="submit" value="Efetuar Inscricao">
                             </form>
                     </div>
+
                 @endif
             </div>
         </div>

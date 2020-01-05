@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('alunoSegueCadeira',['as'=> 'alunoSegueCadeira', 'uses' => 'AlunoSegueCadeira@index']);
+
 Route::get('settings',['as'=> 'settings', 'uses' => 'Settings@index']);
 
 Route::get('aulas',['as'=> 'aulas', 'uses' => 'Aulas@index']);
@@ -65,3 +67,8 @@ Route::post('api/criar_aula', ['as'=> 'api_criar_aula', 'uses' => 'Aulas@add_aul
 Route::post('api/delete_aula', ['as'=> 'api_delete_aula', 'uses' => 'Aulas@delete_aula']);
 
 Route::post('api/aceitar_rejeitar_sala', ['as'=> 'api_aceitar_rejeitar_sala', 'uses' => 'PedidosDeSala@api_aceitar_rejeitar_sala']);
+
+
+Route::post('api/delete_cadeira',['as'=> 'api_delete_cadeira', 'uses' => 'AlunoSegueCadeira@deleteCadeira']);
+
+Route::post('api/add_cadeira',['as'=> 'api_add_cadeira', 'uses' => 'AlunoSegueCadeira@addCadeira']);

@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -46,6 +47,9 @@
                             </li>
 
                             @if (DB::Table('alunos')->find(Auth::user()->id) != null)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('alunoSegueCadeira') }}">{{ __('Cadeiras') }}</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('cursos') }}">{{ __('Cursos') }}</a>
                                 </li>
