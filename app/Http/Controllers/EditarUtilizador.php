@@ -14,11 +14,40 @@ class EditarUtilizador extends Controller
 {
     //
     function editUser(){
+
         $user_id = Input::get('id');
         $user_name = Input::get('name');
         $user_email = Input::get('email');
 
         $user_permissions = Input::get('permissions');
+
+        $submitBTN = Input::get('submit');
+        if(strcmp($submitBTN, 'Remover') == 0)
+        {
+            DB::table('alunos')
+                ->where('id', $user_id)
+                ->delete();
+            DB::table('docentes')
+                ->where('id', $user_id)
+                ->delete();
+            DB::table('administradores')
+                ->where('id', $user_id)
+                ->delete();
+            DB::table('utilizadores')
+                ->where('id', $user_id)
+                ->delete();
+            DB::table('aluno_curso')
+                ->where('aluno_id', $user_id)
+                ->delete();
+            DB::table('cadeira_docente', $user_id)
+                ->where('docente_id')
+                ->delete();
+
+
+            $users = User::all();
+            return redirect()->route('gerirutilizadores', compact('users'));
+
+        }
 
 
         DB::table('alunos')
@@ -88,6 +117,6 @@ class EditarUtilizador extends Controller
         }*/
 
         $users = User::all();
-        return View::make('gerirutilizadores', compact('users'));
+        return redirect()->route('gerirutilizadores', compact('users'));
     }
 }

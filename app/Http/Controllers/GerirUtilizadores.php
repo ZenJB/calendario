@@ -55,4 +55,6 @@ class GerirUtilizadores extends Controller
         $users = User::all();
         return redirect()->route('gerirutilizadores', compact('users'));
     }
+
+
 }

@@ -56,14 +56,20 @@
                                     <a class="nav-link" href="{{ route('frequencias') }}">{{ __('Frequencias') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Aulas') }}</a>
+                                    <a class="nav-link" href="{{ route('aulas') }}">{{ __('Aulas') }}</a>
                                 </li>
                             @endif
 
                             <!-- Caso seja admin -->
                             @if (DB::Table('administradores')->find(Auth::user()->id) != null)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Pedidos de sala') }}</a>
+                                    <a class="nav-link" href="{{ route('gestaoCursos') }}">{{ __('Gestao de Cursos') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('gestaoCadeiras') }}">{{ __('Gestao de Cadeiras') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('pedidosdesala') }}">{{ __('Pedidos de sala') }}</a>
                                 </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{ route('gerirutilizadores') }}">{{ __('Gerir Utilizadores') }}</a>

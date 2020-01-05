@@ -59,7 +59,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <input form="form_{{ _($user->id) }}" type="submit" value="Alterar Permissoes">
+                                        <input form="form_{{ _($user->id) }}" type="submit" name="submit" value="Alterar">
+                                        <input form="form_{{ _($user->id) }}" type="submit" name="submit" value="Remover">
                                     </td>
                             </tr>
                         @endforeach
