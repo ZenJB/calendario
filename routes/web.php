@@ -56,3 +56,12 @@ Route::post('api/alterar_cadeira', ['as'=> 'api_alterar_cadeira', 'uses' => 'Ges
 Route::post('api/add_curso_to_db', ['as'=> 'api_add_curso_db', 'uses' => 'GestaoCursos@add_curso']);
 Route::post('api/alterar_curso_db', ['as'=> 'api_alterar_curso_db', 'uses' => 'GestaoCursos@change_curso']);
 Route::post('api/remove_curso_db', ['as'=> 'api_remove_curso_db', 'uses' => 'GestaoCursos@remove_curso']);
+
+Route::post('api/criar_frequencia', ['as'=> 'api_criar_frequencia', 'uses' => 'Frequencias@add_frequencia']);
+Route::post('api/delete_frequencia', ['as'=> 'api_delete_frequencia', 'uses' => 'Frequencias@delete_frequencia']);
+
+
+Route::post('api/criar_aula', ['as'=> 'api_criar_aula', 'uses' => 'Aulas@add_aula']);
+Route::post('api/delete_aula', ['as'=> 'api_delete_aula', 'uses' => 'Aulas@delete_aula']);
+
+Route::post('api/aceitar_rejeitar_sala', ['as'=> 'api_aceitar_rejeitar_sala', 'uses' => 'PedidosDeSala@api_aceitar_rejeitar_sala']);
