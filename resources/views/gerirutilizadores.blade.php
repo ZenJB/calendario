@@ -69,7 +69,7 @@
                 </div>
 
                 <p></p>
-                <div class="card">
+                <div class="card-small">
                     <div class="card-header">{{ __('Adicionar um novo utilizador') }}</div>
                     <table>
                         <thead>

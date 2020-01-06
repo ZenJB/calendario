@@ -5,9 +5,6 @@
 @include('Assets/require_aluno')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
 
                 <div class="card">
                     <div class="card-header">{{ __('Cadeiras Inscritas') }}</div>
@@ -47,7 +44,7 @@
                 <p></p>
 
                 @if(count($cadeiras) != count($lista_cadeiras))
-                    <div class="card">
+                    <div class="card-small">
                         <div class="card-header">{{ __('Efetuar inscricao numa cadeira') }}</div>
                         <form method="POST" action="{{ route('api_add_cadeira') }}">
                             {{csrf_field()}}
@@ -69,7 +66,5 @@
                         </form>
                     </div>
                 @endif
-            </div>
-        </div>
-    </div>
+
 @endsection

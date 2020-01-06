@@ -2,12 +2,8 @@
 
 @section('content')
 
-
     @include('Assets/require_login')
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Definicoes') }}</div>
                     <form method="POST" action="{{ route('api_settings') }}">
@@ -52,7 +48,5 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
+
 @endsection

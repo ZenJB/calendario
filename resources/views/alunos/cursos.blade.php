@@ -47,7 +47,7 @@
                 <p></p>
 
                 @if(count($cursos) != count($lista_cursos))
-                    <div class="card">
+                    <div class="card-small">
                         <div class="card-header">{{ __('Efetuar inscricao num curso') }}</div>
                             <form method="POST" action="{{ route('api_add_curso') }}">
                                 {{csrf_field()}}

@@ -36,7 +36,7 @@ class AlunosCursos extends Controller
 
         $cursos = DB::table('aluno_curso')->where('aluno_id', Auth::user()->id )->get();
         $lista_cursos = DB::table('curso')->select('id', 'curso')->get();
-        return redirect()->route('alunos/cursos', compact('cursos', 'lista_cursos'));
+        return redirect()->route('cursos', compact('cursos', 'lista_cursos'));
     }
 
     function addCurso(){
@@ -53,6 +53,6 @@ class AlunosCursos extends Controller
 
         $cursos = DB::table('aluno_curso')->where('aluno_id', Auth::user()->id )->get();
         $lista_cursos = DB::table('curso')->select('id', 'curso')->get();
-        return redirect()->route('alunos/cursos', compact('cursos', 'lista_cursos'));
+        return redirect()->route('cursos', compact('cursos', 'lista_cursos'));
     }
 }
