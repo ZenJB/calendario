@@ -37,6 +37,7 @@
   width: calc(50vh + 50vw);
   height: calc(20vh + 20vw);
   font-family: "Nunito", sans-serif;
+  overflow-y: auto;
 }
 
 .card-small {
@@ -46,8 +47,9 @@
           transform: translate(-50%, 0%);
   background-color: #848484;
   width: 50em;
-  height: 6em;
+  height: 6.5em;
   font-family: "Nunito", sans-serif;
+  overflow-y: auto;
 }
 
 .card-header {

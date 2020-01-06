@@ -23,11 +23,16 @@ class GerirUtilizadores extends Controller
         $email = Input::get('email');
         $password = Input::get('password');
         $user_permissions = Input::get('permissions');
-        $user_id = User::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => Hash::make($password),
-        ])->id;
+        $identificacao_uma = Input::get('identificacao_uma');
+
+        $user = new User;
+        $user->name = $name;
+        $user->email = $email;
+        $user->password = Hash::make($password);
+        $user->identificacao_uma = $identificacao_uma;
+        $user->save();
+
+        $user_id = $user->id;
 
         if(isset($user_permissions))
             foreach ($user_permissions as $permission)

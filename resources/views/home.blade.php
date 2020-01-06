@@ -4,27 +4,12 @@
 @include('Assets/require_login')
 
 @section('content')
-    <div class="card">
-        <div class="card-header">{{ __('Proximos Eventos') }}</div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Evento</th>
-                    <th>Sala</th>
-                    <th>Inicio</th>
-                    <th>Fim</th>
-                </tr>
-            </thead>
-            <tbody>
-            @foreach($cadeiras as $cadeira)
-                <tr>
-                    <td>{{_($cadeira->nome)}}</td>
-                    <td>{{_($cadeira->descricao)}}</td>
-                    <td>{{str_replace(" 00:00:00","",_($cadeira->data_inicio))}}</td>
-                    <td>{{str_replace(" 00:00:00","",_($cadeira->data_fim))}}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-    </div>
+
+        <p>Link do seu calendário: <a href="http://ivanteixeira.tk/api/calendar/{{_(Auth::user()->id)}}">http://ivanteixeira.tk/api/calendar/{{_(Auth::user()->id)}}</a> </p>
+        <iframe id="open-web-calendar"
+                src="https://openwebcalendar.herokuapp.com/calendar.html?url=http://83.223.180.99/api/calendar/{{_(Auth::user()->id)}}&amp;language=pt"
+                sandbox="allow-scripts allow-same-origin allow-top-navigation"
+                allowTransparency="true" scrolling="no"
+                frameborder="0" height="600px" width="100%">
+        </iframe>
 @endsection

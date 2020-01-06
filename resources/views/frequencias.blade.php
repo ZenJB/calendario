@@ -96,13 +96,53 @@
                             <td><input form="criar_frequencia"  type="date" name="data_inicio"></td>
                             <td><input form="criar_frequencia"  type="date" name="data_fim"></td>
                             <td>
-                                <input form="criar_frequencia" type="submit" name="submit" value="Criar">
+                                <input form="criar_frequencia" type="submit" name="submit" value="Criar" onclick="alert('Marcação efetuada! Aguarde aprovação do administrador')">
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
+                <p></p>
 
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header"><h1>{{ __('Todas as Frequencias') }}</h1></div>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Cadeira</th>
+                                <th>Local</th>
+                                <th>Data Inicio</th>
+                                <th>Data Fim</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @if(isset($cadeiras))
+                                @foreach($cadeiras as $cadeira)
+                                        @foreach(DB::table('cadeira_eventos')
+                                        ->select('id','nome','cadeira_id','descricao','data_inicio','data_fim')
+                                        ->where([
+                                            'tipo_de_evento' => 'frequencia',
+                                            'cadeira_id' => $cadeira->id,
+                                            'aceite' => '1'
+                                        ])->get() as $evento)
+                                            <tr>
+                                                <td>{{$evento->nome}}</td>
+                                                <td>{{DB::table('cadeira')->select('nome')->where(['id' => $evento->cadeira_id])->first()->nome}}</td>
+                                                <td>{{$evento->descricao}}</td>
+                                                <td>{{$evento->data_inicio}}</td>
+                                                <td>{{$evento->data_fim}}</td>
+                                            </tr>
+                                        @endforeach
+                                @endforeach
+                            @else
+                                Não existe nenhuma frequencia marcada
+                            @endif
+                            </tbody>
+                        </table>
+                    </div>
+                    <p></p>
 
             </div>
         </div>

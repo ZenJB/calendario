@@ -24,6 +24,7 @@ class GestaoCadeiras extends Controller
     function add_cadeira(){
         $id_curso = Input::get('curso');
         $nome_cadeira = Input::get('name');
+        $docente = Input::get('docente');
         $id_cadeira = DB::table('cadeira')
             ->insertGetId(['nome' => $nome_cadeira]);
 
@@ -31,6 +32,12 @@ class GestaoCadeiras extends Controller
             ->insert([
                 'cadeira_id' => $id_cadeira,
                 'curso_id' => $id_curso
+            ]);
+
+        DB::table('cadeira_docente')
+            ->insert([
+                'cadeira_id' => $id_cadeira,
+                'docente_id' => $docente
             ]);
 
         $cadeiras = DB::table('cadeira')->select('id', 'nome')->get();

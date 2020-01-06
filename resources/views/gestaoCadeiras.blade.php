@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 
+@include('Assets/require_admin')
 @include('Assets/require_login')
 
 @section('content')
@@ -83,7 +84,7 @@
                         <tbody>
                         <tr>
                             <td>
-                                <form id="criar_cadeira" method="POST" action="{{ route('api_add_cadeira') }}">
+                                <form id="criar_cadeira" method="POST" action="{{ route('api_add_cadeira_admin') }}">
                                     {{csrf_field()}}
                                     <input type="text" name="name" value="">
                                 </form>

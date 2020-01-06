@@ -18,6 +18,7 @@ class EditarUtilizador extends Controller
         $user_id = Input::get('id');
         $user_name = Input::get('name');
         $user_email = Input::get('email');
+        $identificacao_uma = Input::get('identificacao_uma');
 
         $user_permissions = Input::get('permissions');
 
@@ -83,7 +84,7 @@ class EditarUtilizador extends Controller
 
         DB::table('utilizadores')
             ->where('id', $user_id)
-            ->update(['name' => $user_name, 'email'=> $user_email]);
+            ->update(['name' => $user_name, 'email'=> $user_email, "identificacao_uma" => $identificacao_uma]);
         /*
         if(strpos($permissions, 'admin')) {
             if (DB::Table('administradores')->find(Auth::user()->id) == null)

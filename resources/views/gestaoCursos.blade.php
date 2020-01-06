@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 
+@include('Assets/require_admin')
 @include('Assets/require_login')
 
 @section('content')
@@ -57,7 +58,7 @@
                                 </form>
                             </td>
                             <td>
-                                <input form="criar_curso" type="submit" name="submit" value="Criar Cadeira">
+                                <input form="criar_curso" type="submit" name="submit" value="Criar Curso">
                             </td>
                         </tr>
                         </tbody>

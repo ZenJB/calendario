@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('api/calendar/{id}', 'API@getFromUMa');
+
 Route::get('alunoSegueCadeira',['as'=> 'alunoSegueCadeira', 'uses' => 'AlunoSegueCadeira@index']);
 
 Route::get('settings',['as'=> 'settings', 'uses' => 'Settings@index']);
@@ -49,7 +51,7 @@ Route::post('api/add_curso',['as'=> 'api_add_curso', 'uses' => 'AlunosCursos@add
 
 Route::post('api/add_user', ['as'=> 'api_add_user', 'uses' => 'GerirUtilizadores@addUser']);
 
-Route::post('api/add_cadeira', ['as'=> 'api_add_cadeira', 'uses' => 'GestaoCadeiras@add_cadeira']);
+Route::post('api/add_cadeira_admin', ['as'=> 'api_add_cadeira_admin', 'uses' => 'GestaoCadeiras@add_cadeira']);
 
 Route::post('api/remove_cadeira', ['as'=> 'api_remove_cadeira', 'uses' => 'GestaoCadeiras@remove_cadeira']);
 

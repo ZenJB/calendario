@@ -16,7 +16,11 @@ class AlunoSegueCadeira extends Controller
     function index(){
 
         $cadeiras = DB::table('aluno_has_cadeira')->where('aluno_id', Auth::user()->id )->get();
-        $lista_cadeiras = DB::table('cadeira')->select('id', 'nome')->get();
+        $lista_cadeiras = DB::table('cadeira')
+            ->join('cadeira_curso', 'cadeira.id', '=', 'cadeira_curso.cadeira_id')
+            ->join('aluno_curso', 'cadeira_curso.curso_id', '=', 'aluno_curso.curso_id')
+            ->where('aluno_id', Auth::user()->id)
+            ->get();
         return View::make('alunos/alunoSegueAula', compact('cadeiras', 'lista_cadeiras'));
     }
 
@@ -31,7 +35,11 @@ class AlunoSegueCadeira extends Controller
             ->delete();
 
         $cadeiras = DB::table('aluno_has_cadeira')->where('aluno_id', Auth::user()->id )->get();
-        $lista_cadeiras = DB::table('cadeira')->select('id', 'nome')->get();
+        $lista_cadeiras = DB::table('cadeira')
+            ->join('cadeira_curso', 'cadeira.id', '=', 'cadeira_curso.cadeira_id')
+            ->join('aluno_curso', 'cadeira_curso.curso_id', '=', 'aluno_curso.curso_id')
+            ->where('aluno_id', Auth::user()->id)
+            ->get();
         return redirect()->route('alunoSegueCadeira', compact('cadeiras', 'lista_cadeiras'));
     }
 
@@ -48,7 +56,11 @@ class AlunoSegueCadeira extends Controller
 
 
         $cadeiras = DB::table('aluno_has_cadeira')->where('aluno_id', Auth::user()->id )->get();
-        $lista_cadeiras = DB::table('cadeira')->select('id', 'nome')->get();
+        $lista_cadeiras = DB::table('cadeira')
+            ->join('cadeira_curso', 'cadeira.id', '=', 'cadeira_curso.cadeira_id')
+            ->join('aluno_curso', 'cadeira_curso.curso_id', '=', 'aluno_curso.curso_id')
+            ->where('aluno_id', Auth::user()->id)
+            ->get();
         return redirect()->route('alunoSegueCadeira', compact('cadeiras', 'lista_cadeiras'));
     }
 }

@@ -33,7 +33,8 @@ class Frequencias extends Controller
                 'descricao' => $descricao,
                 'data_inicio' => $data_inicio,
                 'data_fim' => $data_fim,
-                'tipo_de_evento' => 'frequencia'
+                'tipo_de_evento' => 'frequencia',
+                'aceite' => '0'
             ]);
 
         $cadeiras = DB::table('cadeira')->select('id', 'nome')->get();

@@ -19,6 +19,7 @@
                             <th>Aluno</th>
                             <th>Docente</th>
                             <th>Administrador</th>
+                            <th>Identificacao Academica</th>
                             <th>Editar</th>
                         </tr>
                         </thead>
@@ -59,6 +60,9 @@
                                         @endif
                                     </td>
                                     <td>
+                                        <input form="form_{{ _($user->id) }}" type="text" name="identificacao_uma" value="{{_($user->identificacao_uma)}}">
+                                    </td>
+                                    <td>
                                         <input form="form_{{ _($user->id) }}" type="submit" name="submit" value="Alterar">
                                         <input form="form_{{ _($user->id) }}" type="submit" name="submit" value="Remover">
                                     </td>
@@ -80,6 +84,7 @@
                             <th>Aluno</th>
                             <th>Docente</th>
                             <th>Administrador</th>
+                            <th>Identificacao Academica</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -104,6 +109,9 @@
                             </td>
                             <td>
                                 <input form="insert_new_user_form" type="checkbox" name="permissions[]" value="admin">
+                            </td>
+                            <td>
+                                <input form="insert_new_user_form" type="text" name="identificacao_uma" value="" placeholder="xxxxxxx">
                             </td>
                         </tr>
                         </tbody>

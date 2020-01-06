@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 
+@include('Assets/require_admin')
 @include('Assets/require_login')
 
 @section('content')
@@ -8,7 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h1>{{ __('As suas frequencias') }}</h1></div>
+                    <div class="card-header"><h1>{{ __('Pedidos de Sala') }}</h1></div>
                     <table>
                         <thead>
                         <tr>

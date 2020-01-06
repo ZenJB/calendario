@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 
+@include('Assets/require_docente')
 @include('Assets/require_login')
 
 @section('content')
